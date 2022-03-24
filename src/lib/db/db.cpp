@@ -55,7 +55,7 @@ json DB::getDocument(string documentId)
 
     if (document == nullptr)
     {
-        throw string("Documento não encontrado");
+        throw string("document-not-found");
     }
 
     fileDataInput.close();
