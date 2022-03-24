@@ -30,23 +30,38 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 if(ANDROID)
   add_library(secretpp SHARED
-      src/main.cpp
-      src/secretpp.cpp
-      src/secretpp.h
-      src/secretpp.ui
-      src/pages/home/home.cpp
-      src/pages/home/home.h
-      src/pages/home/home.ui
+
   )
 else()
   add_executable(secretpp
+
+      # Main
       src/main.cpp
-      src/secretpp.cpp
-      src/secretpp.h
-      src/secretpp.ui
-      src/pages/home/home.cpp
-      src/pages/home/home.h
-      src/pages/home/home.ui
+
+      # Widgets
+
+          # App widget
+          src/secretpp.cpp
+          src/secretpp.h
+          src/secretpp.ui
+
+          # HomePage widget
+          src/pages/home/home.cpp
+          src/pages/home/home.h
+          src/pages/home/home.ui
+
+      # Bibliotecas
+
+          # DB
+          src/lib/db/db.h
+          src/lib/db/db.cpp
+
+          # Bcrypt
+          src/lib/bcrypt/bcrypt.h
+          src/lib/bcrypt/bcrypt.cpp
+
+          # Json
+          # Biblioteca exportada como .hpp
     )
 endif()
 
