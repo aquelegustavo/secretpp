@@ -2,9 +2,14 @@
 #define SECRETPP_H
 
 #include <QMainWindow>
+#include <string>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class Secretpp; }
+namespace Ui
+{
+    class Secretpp;
+}
+using namespace std;
 QT_END_NAMESPACE
 
 class Secretpp : public QMainWindow
@@ -21,5 +26,7 @@ private slots:
 
 private:
     Ui::Secretpp *app;
+
+    int loginUser(string username, string password);
 };
 #endif // SECRETPP_H
