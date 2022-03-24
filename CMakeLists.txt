@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 project(secretpp LANGUAGES CXX)
+project("./src")
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -10,6 +11,7 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 
 # QtCreator supports the following variables for Android, which are identical to qmake Android variables.
 # Check http://doc.qt.io/qt-5/deployment-android.html for more information.
@@ -28,18 +30,24 @@ find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 if(ANDROID)
   add_library(secretpp SHARED
-    main.cpp
-    secretpp.cpp
-    secretpp.h
-    secretpp.ui
+      src/main.cpp
+      src/secretpp.cpp
+      src/secretpp.h
+      src/secretpp.ui
+      src/pages/home/home.cpp
+      src/pages/home/home.h
+      src/pages/home/home.ui
   )
 else()
   add_executable(secretpp
-    main.cpp
-    secretpp.cpp
-    secretpp.h
-    secretpp.ui
-  )
+      src/main.cpp
+      src/secretpp.cpp
+      src/secretpp.h
+      src/secretpp.ui
+      src/pages/home/home.cpp
+      src/pages/home/home.h
+      src/pages/home/home.ui
+    )
 endif()
 
 target_link_libraries(secretpp PRIVATE Qt5::Widgets)

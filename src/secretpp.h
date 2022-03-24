@@ -15,7 +15,11 @@ public:
     Secretpp(QWidget *parent = nullptr);
     ~Secretpp();
 
+private slots:
+
+    void on_loginButton_clicked();
+
 private:
-    Ui::Secretpp *ui;
+    Ui::Secretpp *app;
 };
 #endif // SECRETPP_H

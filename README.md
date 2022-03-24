@@ -1,0 +1,1 @@
+Texto selecionável para acessibilidade
