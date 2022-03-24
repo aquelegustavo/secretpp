@@ -59,6 +59,7 @@ else()
           # Bcrypt
           src/lib/bcrypt/bcrypt.h
           src/lib/bcrypt/bcrypt.cpp
+          src/lib/bcrypt/blowfish.cpp
 
           # Json
           # Biblioteca exportada como .hpp
