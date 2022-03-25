@@ -19,10 +19,14 @@ class Secretpp : public QMainWindow
 public:
     Secretpp(QWidget *parent = nullptr);
     ~Secretpp();
+    static string username;
+    static string password;
 
 private slots:
 
     void on_loginButton_clicked();
+
+    void on_signUpButton_clicked();
 
 private:
     Ui::Secretpp *app;

@@ -10,11 +10,14 @@
 #include "./ui_secretpp.h"
 
 #include "pages/home/home.h"
-#include "./pages/home/ui_home.h"
+
+#include "pages/signup/signup.h"
 
 #include "./lib/db/db.h"
 
 #include "./lib/json/json.hpp"
+
+#include "./user.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -68,12 +71,13 @@ void Secretpp::on_loginButton_clicked()
 
 {
 
-    string username = app->usernameInput->text().toStdString();
-    string password = app->passwordInput->text().toStdString();
+    currentUsername = app->usernameInput->text().toStdString();
+    currentPassword = app->passwordInput->text().toStdString();
+
 
     QWidget *homePage = new Home;
 
-    switch (loginUser(username, password))
+    switch (loginUser(currentUsername, currentPassword))
     {
     case SUCESS:
         qInfo() << "Usuário logado";
@@ -92,4 +96,13 @@ void Secretpp::on_loginButton_clicked()
         app->status->setText("Erro indefinido");
         break;
     }
+}
+
+void Secretpp::on_signUpButton_clicked()
+{
+
+    QWidget *signupPage = new Signup;
+    this->close();
+
+    signupPage->show();
 }

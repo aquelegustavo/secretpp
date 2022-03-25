@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::Home *homePage;
+    void onTableClicked(const QString & currentText);
+    void updateSP(int row, int col);
 };
 
 #endif // HOME_H
