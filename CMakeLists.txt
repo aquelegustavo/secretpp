@@ -38,6 +38,9 @@ else()
       # Main
       src/main.cpp
 
+      src/user.h
+      src/user.cpp
+
       # Widgets
 
           # App widget
@@ -49,6 +52,11 @@ else()
           src/pages/home/home.cpp
           src/pages/home/home.h
           src/pages/home/home.ui
+
+          # SignupPage widget
+          src/pages/signup/signup.cpp
+          src/pages/signup/signup.h
+          src/pages/signup/signup.ui
 
       # Bibliotecas
 
