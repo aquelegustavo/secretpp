@@ -91,9 +91,7 @@ json DB::findDocument(string key, string value)
             throw string("Campo não encontrado");
         }
 
-        string fieldValue = doc.value()[key]["value"];
-
-        size_t found = fieldValue.find(value);
+        size_t found = field.dump().find(value);
         if (found != string::npos)
         {
             search.push_back(docData);
